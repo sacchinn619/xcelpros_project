@@ -1,4 +1,5 @@
 import React from 'react'
+import Draggable from 'react-draggable'
 import { FaGooglePlay } from 'react-icons/fa'
 import { FaApple,FaRegStar } from 'react-icons/fa'
 import { GrConnect } from 'react-icons/gr'
@@ -138,16 +139,18 @@ class WebPage extends React.Component{
                      <div style={{marginRight:"50px"}}><RiAccountCircleLine/><BsFillEyeSlashFill/><BsFilter/></div>
                      </nav>
                         <div class="container" style={{border:"1px solid black",marginTop:"60px"}}>
+
 <table class="table table-bordered">
   <thead class="table-active">
+  
     <tr>
-      <th scope="col">Things To Do</th>
-      <th scope="col">Owner</th>
-      <th scope="col">Status</th>
-      <th scope="col">Due date</th>
-      <th scope="col">Priority</th>
+     <Draggable><th scope="col">Things To Do</th></Draggable> 
+     <Draggable><th scope="col">Owner</th></Draggable> 
+     <Draggable><th scope="col">Status</th></Draggable>
+     <Draggable><th scope="col">Due date</th></Draggable>
+     <Draggable><th scope="col">Priority</th></Draggable>
       {this.state.addColoumn==false ?(<button style={{backgroundColor:"transparent",borderRadius:"24px"}}onClick={()=>{this.handleColumn()}}>+</button>)
-      :(<th scope="col">Add Coloumn</th>)}
+      :(<Draggable><th scope="col">Add Coloumn</th></Draggable>)}
       
     </tr>
   </thead>
@@ -190,11 +193,11 @@ class WebPage extends React.Component{
 <table class="table table-bordered" style={{marginTop:"80px"}}>
 <thead class="table-active">
     <tr>
-      <th scope="col">Done</th>
-      <th scope="col">Owner</th>
-      <th scope="col">Status</th>
-      <th scope="col">Due date</th>
-      <th scope="col">Priority</th>
+     <Draggable><th scope="col">Done</th></Draggable> 
+     <Draggable><th scope="col">Owner</th></Draggable> 
+     <Draggable><th scope="col">Status</th></Draggable> 
+     <Draggable><th scope="col">Due date</th></Draggable> 
+     <Draggable><th scope="col">Priority</th></Draggable> 
       {this.state.addColoumnCompletedTasks==false ?(<button style={{backgroundColor:"transparent",borderRadius:"24px"}} onClick={()=>{this.handleColumnCompletedTasks()}}>+</button>)
       :(<th scope="col">Add Coloumn</th>)} 
     </tr>
